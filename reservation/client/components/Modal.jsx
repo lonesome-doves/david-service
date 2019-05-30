@@ -38,6 +38,12 @@ class Modal extends React.Component {
     this.onCheckoutSelect = this.onCheckoutSelect.bind(this);
   }
 
+  componentDidMount() {
+    fetch('http://localhost:3002/checkout')
+    .then(res => res.json())
+    .then(json => console.log(json));
+  }
+
   onGuestModalBlur() {
     this.setState({
       showGuestModal: false
